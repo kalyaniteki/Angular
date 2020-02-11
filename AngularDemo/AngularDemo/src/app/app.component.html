@@ -1,0 +1,53 @@
+<h1>Customer detail(ngFor)</h1>
+<ul>
+  <li *ngFor="let cst of Customer">
+    {{cst.name}}
+    {{cst.country}}
+    {{cst.age}}
+  </li>
+</ul>
+<ul>
+  <li *ngFor="let cst of Customer;let i=index">
+    {{i+1}}-
+    {{cst.name}}
+    {{cst.country}}
+    {{cst.age}}
+  </li>
+</ul>
+<!-- grouping -->
+<ul>
+  <li *ngFor="let grp of StudentbyCountry">
+    {{grp.Country}}
+    <ul>
+         <li *ngFor="let stu of grp.student">
+          {{stu.name}} {{stu.age}}
+         
+         </li> 
+    </ul>
+    
+    <ul>
+      <li *ngFor="let emp of grp.Employee">
+       {{emp.name}} {{emp.age}}
+      </li> 
+    </ul>
+  </li>
+</ul>
+
+
+<h1>ngIF Example</h1>
+<ul *ngFor="let cmr of Customer">
+  <li *ngIf="cmr.age<23" class="text-primary">
+      {{cmr.name}}  {{cmr.country}}
+
+  </li>
+</ul>
+<h1>ngswitch Example</h1>
+
+ <ul *ngFor="let cmr of Customer" [ngSwitch]="cmr.country">
+   <li *ngSwitchCase="'India'" class="text-success"> {{cmr.name}}  </li>
+   <li *ngSwitchCase="'USA'" class="text-danger"> {{cmr.name}}  </li>
+   <li *ngSwitchDefault class="text-primary"> {{cmr.name}}  </li>
+
+ </ul>
+
+

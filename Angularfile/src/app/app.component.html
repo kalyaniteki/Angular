@@ -1,0 +1,12 @@
+<h1>hellooo</h1>
+<h2>welcome</h2>
+<h3>{{'The Title is '+title}}</h3>
+<h3>{{10+num}}</h3>
+<h3>{{title?title:'no titile'}}</h3>
+<img src="{{imagepath}}">
+<img [src]="imagepath">
+<h3>{{getname()}}</h3>
+<button [disabled]="isdisabled">Click</button>
+<button [class]="mystyle" bind-disabled='isdisabled'>BindMe</button>
+<app-employee></app-employee>
+<button [class.italicclass]="applyStyle">CheckStyle</button>

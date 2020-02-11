@@ -1,0 +1,39 @@
+<div class="jumbotron">
+    <div class="container">
+        <form [formGroup]="loginform" (ngSubmit)="Add()">
+           <div class="form-group">
+               <label>ProductId</label>
+               <input type="text" formControlName="proid" class="form-control" [ngClass]="{'is-invalid': submitted && f.proid.error}">
+               <div *ngIf="submitted && f.proid.error" class="invalid-feedback">
+                <div *ngIf="f.proid.error.required">project id required</div>
+               </div>
+           </div>
+           <div class="formGroup">
+            <label>Productname</label>
+            <input type="text" formControlName="proname" class="form-control" [ngClass]="{'is-invalid': submitted && f.proname.error}">
+            <div *ngIf="submitted&&f.proname.error" class="invalid-feedback">
+             <div *ngIf="f.proname.error.required">project name required</div>
+            </div>
+        </div>
+        <div class="formGroup">
+            <label>Price</label>
+            <input type="text" formControlName="price" class="form-control" [ngClass]="{'is-invalid': submitted && f.price.error}">
+            <div *ngIf="submitted&&f.price.error" class="invalid-feedback">
+             <div *ngIf="f.price.error.required">project price required</div>
+            </div>
+        </div>
+        <div class="formGroup">
+            <label>Stock</label>
+            <input type="text" formControlName="stock" class="form-control" [ngClass]="{'is-invalid': submitted && f.stock.error}">
+            <div *ngIf="submitted&&f.stock.error" class="invalid-feedback">
+             <div *ngIf="f.stock.error.required">Stock required</div>
+            </div>
+        </div>
+        <div class="text-center">
+            <button class="btn btn-primary mr-1">Add</button>
+            <button class="btn btn-secondary" type="reset" (click)="onReset()">RESET</button>
+        </div>
+
+        </form>
+    </div>
+</div>

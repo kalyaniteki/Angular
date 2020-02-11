@@ -1,0 +1,15 @@
+<h1>Evnet Binding</h1>
+<h2>Hello {{name}}</h2>
+<button (click)='setName()'>Event</button>
+<div>
+    <input type="text" #t1>
+    <button (click)='greet(t1.value)'>Click</button>
+</div>
+<div>
+    <select (change)='greet(s1.value)' #s1>
+        <option value="Rohan">Rohan</option>
+        <option value="mike">mike</option>
+        <option value="elll">elll</option>
+        <option value="max">max</option>
+    </select>
+</div>

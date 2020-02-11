@@ -1,0 +1,10 @@
+<p>Welcome {{name}}</p>
+<div>
+    <div><a [routerLink]="['/admin/add-category']">AddCategory</a></div>
+    <div><a [routerLink]="['/admin/add-remove-buyer']">AddRemoveBuyer</a></div>
+    <div><a [routerLink]="['/admin/add-remove-seller']">AddRemoveSeller</a></div>
+</div>
+<div>
+    <button (click)="logout()" class="btn btn-primary">Logout</button>
+</div>
+<router-outlet></router-outlet>

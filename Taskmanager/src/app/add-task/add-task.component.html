@@ -1,0 +1,30 @@
+<div class="container" >
+ <div>TaskManager</div>
+ <div>
+     <a [routerLink]="'add-task'">AddTask</a>
+     <a [routerLink]="'view-task'">ViewTask</a>
+ </div>
+ <div class="formgroup">
+     <label>Task</label>
+     <input type="text" [(ngModel)]="name">
+ </div>
+ <div class="formgroup">
+    <label>Priority</label>
+    <input type="range" [(ngModel)]="priority">
+</div>
+<div class="formgroup">
+    <label>Startdate</label>
+    <input type="date" [(ngModel)]="startdate">
+</div>
+<div class="formgroup">
+    <label>enddate</label>
+    <input type="date" [(ngModel)]="enddate">
+</div>
+<div>
+    <button (click)="Add()">Add Task</button>
+    <button (click)="reset()">Reset</button>
+</div>
+<div>
+    <router-outlet></router-outlet>
+</div>
+</div>

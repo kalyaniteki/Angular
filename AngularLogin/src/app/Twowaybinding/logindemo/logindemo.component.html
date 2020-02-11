@@ -1,0 +1,17 @@
+<h1>Login</h1>
+<table>
+    <tr>
+        <td>Username</td>
+        <td><input type="text" [(ngModel)]='item.username' #t1></td>
+    </tr>
+    <tr>
+        <td>password</td>
+        <td><input type="password" [(ngModel)]='item.pass' #t2></td>
+    </tr>
+    <tr>
+        <td>
+            <button (click)='valid(t1.value,t2.value)'>Login</button>
+        </td>
+    </tr>
+</table>
+{{ngOnInit()}}

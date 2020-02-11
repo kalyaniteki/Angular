@@ -1,0 +1,10 @@
+<p>Welcome {{name}}</p>
+<div class="row">
+    <div><a [routerLink]="'buyitem'">Buyitem</a></div>
+    <div><a [routerLink]="['/buyer/viewcart']">Viewitem</a></div>
+    <div><a [routerLink]="['/buyer/payment']">payment</a></div>
+</div>
+<div>
+    <button (click)="logout()">Logout</button>
+</div>
+<router-outlet></router-outlet>

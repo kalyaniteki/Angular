@@ -1,0 +1,103 @@
+<!-- main app container -->
+<!-- <div class="card m-6"> -->
+    
+    <div class="container">
+        <form [formGroup]="registerForm" (ngSubmit)="Add()">
+           
+               
+                <div class="form-group col-5">
+                    <label>Id</label>
+                    <input type="text" formControlName="id" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.id.errors }" />
+                    <div *ngIf="submitted && f.id.errors" class="invalid-feedback">
+                        <div *ngIf="f.id.errors.required">id is required</div>
+                        <div *ngIf="f.id.errors.pattern">Enter valid id ex:E2345</div>
+                    </div>
+                </div>
+                <div class="form-group col-5">
+                    <label>Name</label>
+                    <input type="text" formControlName="name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
+                    <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                        <div *ngIf="f.name.errors.required">Name is required</div>
+                        <div *ngIf="f.name.errors.pattern">name must be at least 5 characters</div>
+                    </div>
+                </div>
+                <div class="form-group col-5">
+                    <label>JoinDate</label>
+                    <input type="date" formControlName="joindate" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.joindate.errors }" />
+                    <div *ngIf="submitted && f.joindate.errors" class="invalid-feedback">
+                        <div *ngIf="f.joindate.errors.required">Joindate is required</div>
+                      
+                    </div>
+                </div>
+                 <div class="form-group col-5">
+                    <label>Designation</label>
+                    <select formControlName="designation" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.designation.errors }">
+                        <option value=""></option>
+                        <option value="trainer">Trainer</option>
+                        <option value="employee">Employee</option>
+                        <option value="teamlead">teamlead</option>
+                        <option value="PAT">PAT</option>
+                    </select>
+                    <div *ngIf="submitted && f.designation.errors" class="invalid-feedback">
+                        <div *ngIf="f.designation.errors.required">Designation is required</div>
+                    </div>
+                </div>
+        
+            <div class="form-group col-5">
+                <label>Mobile</label>
+                <input type="text" formControlName="mobile" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.mobile.errors }" />
+                <div *ngIf="submitted && f.mobile.errors" class="invalid-feedback">
+                    <div *ngIf="f.mobile.errors.required">Mobile no is required</div>
+                    <div *ngIf="f.mobile.errors.pattern">Mobile no Must be Valid</div>
+                </div>
+            </div>
+            <div class="form-group col-5">
+                <label>Email</label>
+                <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                    <div *ngIf="f.email.errors.required">Email is required</div>
+                    <div *ngIf="f.email.errors.pattern">Email must be a valid email address</div>
+                </div>
+            </div>
+        
+         
+                <div class="form-group col-5">
+                    <label>Password</label>
+                    <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                    <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                        <div *ngIf="f.password.errors.required">Password is required</div>
+                        <div *ngIf="f.password.errors.pattern">Password must be at least 6 characters</div>
+                    </div>
+                </div>
+               
+        
+            <div class="form-group col-5">
+                <button class="btn btn-primary mr-1">Submit</button>
+                <button class="btn btn-secondary" type="reset" (click)="onReset()">Cancel</button>
+               
+            </div>
+        </form>
+    </div>
+<!-- </div> -->
+<table border="1">
+    <thead>
+        <td>Id</td>
+        <td>name</td>
+        <td>JoinDate</td>
+        <td>Designation</td>
+        <td>Mobile</td>
+        <td>Email</td>
+        <td>Password</td>
+    </thead>
+    <tr *ngFor="let item of list">
+        <td>{{item.id}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.joindate}}</td>
+        <td>{{item.designation}}</td>
+        <td>{{item.mobile}}</td>
+        <td>{{item.email}}</td>
+        <td>{{item.password}}</td>
+    </tr>
+</table>
+
+

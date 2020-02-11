@@ -1,0 +1,54 @@
+<p>demo-assignment works!</p>
+<div id="Project">
+    <table>
+        <tr>
+            <td>PID</td>
+            <td><input type="text" [(ngModel)]="proid"></td>
+        </tr>
+        <tr>
+            <td>PName</td>
+            <td><input type="text" [(ngModel)]="pname"></td>
+        </tr>
+        <tr>
+            <td>Domain</td>
+            <td>
+                <select [(ngModel)]="domain">
+                    <option>DotNet</option>
+                    <option>java</option>
+                    <option>Testing</option>
+                    <option>ML</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>StartDate</td>
+            <td><input type="date" [(ngModel)]="startdate"></td>
+        </tr>
+        <tr>
+            <td>EndDate</td>
+            <td><input type="date" [(ngModel)]="enddate"></td>
+        </tr>
+        <tr>
+            <button (click)="Add()">Add</button>
+            <button (click)="setval()">Set</button>
+        </tr>
+    </table>
+
+</div>
+
+<table class="table table-responsive">
+<tr>
+    <th *ngIf="val">ProjectID</th>
+    <th *ngIf="val">projectname</th>
+    <th *ngIf="val">Domain</th>
+    <th *ngIf="val">StratDate</th>
+    <th *ngIf="val">EndDate</th>
+</tr>
+<tr *ngFor="let item of list" >
+    <td *ngIf="val">{{item.proid}}</td>
+    <td *ngIf="val">{{item.pname}}</td>
+    <td *ngIf="val">{{item.domain}}</td>
+    <td *ngIf="val">{{item.startdate}}</td>
+    <td *ngIf="val">{{item.enddate}}</td>
+</tr>
+</table>
